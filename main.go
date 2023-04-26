@@ -2,15 +2,22 @@ package main
 
 import "fmt"
 
-func main() {
+func fib(n int) int {
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return 1
+	}
 	b := 0
-	fmt.Println(b)
 	c := 1
-	fmt.Println(c)
-	for a := 10; a > 1; a-- {
+	for a := n; a > 1; a-- {
 		d := b + c
 		b = c
 		c = d
-		fmt.Println(c)
 	}
+	return c
+}
+
+func main() {
+	fmt.Println(fib(5))
 }
